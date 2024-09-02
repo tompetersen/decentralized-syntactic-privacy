@@ -1,0 +1,28 @@
+#!/bin/bash
+
+source ../venv/bin/activate
+
+# check arguments
+if [ $# -eq 0 ]
+  then
+    echo "\nNo arguments supplied. Usage: panda_run <Nr of boxes>"
+    exit 1
+fi
+if [ $# -gt 1 ]
+  then
+    echo "\nToo many arguments supplied. Usage: panda_run <Nr of boxes>"
+    exit 1
+fi
+if [[ "$1" -lt 1 ]]; then
+    echo -e "\nWrong argument. Usage: panda_run <Nr of boxes, at least 1>\n"
+    exit 1
+fi
+
+# start boxes
+for ((i=1; i<=$1; i++))
+do
+    gnome-terminal --tab -e "python3 run_box.py $i $1"
+done
+
+# start central server
+python3 run_central.py --number_of_boxes $1
