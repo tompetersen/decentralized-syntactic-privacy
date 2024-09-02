@@ -95,6 +95,7 @@ def main():
     parser.add_argument('--anonymity_parameter', type=int, help='The anonymity parameter k of k-anonymity.', default=DEFAULT_K)
     parser.add_argument('--interactive_criteria', action='store_true', help='If set, criteria can be set interactively.')
     parser.add_argument('--dataset', help='The data set to be used ([medical]/adult).', choices=["adult", "medical"], default="medical")
+    parser.add_argument('--print_output', help='Print the final protocol output', default=False, action=argparse.BooleanOptionalAction)
     parser.add_argument('--used_qids', help='Comma-separated list, can be used to restrict the used QIDs.')
     args = parser.parse_args()
 
@@ -133,8 +134,9 @@ def main():
 
     print(f"FINISHED - time elapsed [{timedelta(seconds=end-start)}]")
 
-    sorted_anon_result = sorted(anonymized_result, key=itemgetter(1))
-    print_results(sorted_anon_result)
+    if args.print_output:
+        sorted_anon_result = sorted(anonymized_result, key=itemgetter(1))
+        print_results(sorted_anon_result)
 
 
 if __name__ == "__main__":
