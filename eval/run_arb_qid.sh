@@ -23,7 +23,7 @@ do
 	do
 		now=$(date +%Y%m%d_%H%M%S)
 		echo $now
-		logfile="runs_arb_qid_$method/adult-$qid-$now.txt"
+		logfile="data/runs_arb_qid_$method/adult-$qid-$now.txt"
 
 		for ((i=1; i<=$number_of_parties; i++))
 		do

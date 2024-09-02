@@ -19,12 +19,12 @@ do
 	for dataset in medical adult ;
 	do
 
-		for ((p=8; p<=$max_number_of_parties; p++))
+		for ((p=2; p<=$max_number_of_parties; p++))
 		do
 			now=$(date +%Y%m%d_%H%M%S)
 			echo $now
-			logfile="runs_nw_$method/$dataset-$p-$now.txt"
-                        touch $logfile
+			logfile="data/runs_$method/$dataset-$p-$now.txt"
+			touch $logfile
 
 			for ((i=1; i<=p; i++))
 			do

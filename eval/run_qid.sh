@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# old version not used anymore - try run_arb_qid.sh
+
 number_of_parties=3
 max_number_of_qids=6
 
@@ -22,7 +24,7 @@ do
 	do
 		now=$(date +%Y%m%d_%H%M%S)
 		echo $now
-		logfile="runs_qid_$method/adult-$num_qid-$now.txt"
+		logfile="data/runs_qid_$method/adult-$num_qid-$now.txt"
 
 		for ((i=1; i<=$number_of_parties; i++))
 		do
