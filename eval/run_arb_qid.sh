@@ -24,6 +24,7 @@ do
 		now=$(date +%Y%m%d_%H%M%S)
 		echo $now
 		logfile="data/runs_arb_qid_$method/adult-$qid-$now.txt"
+		mkdir -p "$(dirname "$logfile")" && touch "$logfile"
 
 		for ((i=1; i<=$number_of_parties; i++))
 		do

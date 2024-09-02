@@ -24,7 +24,7 @@ do
 			now=$(date +%Y%m%d_%H%M%S)
 			echo $now
 			logfile="data/runs_$method/$dataset-$p-$now.txt"
-			touch $logfile
+			mkdir -p "$(dirname "$logfile")" && touch "$logfile"
 
 			for ((i=1; i<=p; i++))
 			do
