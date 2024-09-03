@@ -43,8 +43,8 @@ do
 
         python -c "import psutil,sys;network=psutil.net_io_counters(pernic=True);sys.stdout.write('NETWORK AFTER: ' + str(network) + '\n');" >> $logfile
       done
-
-	done
+    done
+  done
 done
 
 
