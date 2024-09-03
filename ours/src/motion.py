@@ -1,9 +1,12 @@
 from typing import Tuple, List
+import os
 import sys
 
 from src.counter_information_data import NodeCounterType, CounterGroup
 
-MOTION_LIB_PATH = "/home/tom/git/motion-fork/build/lib"
+MOTION_LIB_PATH = os.environ.get("MOTION_PANDA_LIB_PATH")
+if not MOTION_LIB_PATH:
+    raise Exception("You must set the path for the required motion lib in the environment variable MOTION_PANDA_LIB_PATH. Contact the readme for details.")
 sys.path.append(MOTION_LIB_PATH)
 import pandapython
 
