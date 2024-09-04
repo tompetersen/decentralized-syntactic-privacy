@@ -274,7 +274,7 @@ def create_figure(ours_data: pd.DataFrame, original_data: pd.DataFrame, mean_fie
     axs.set_xlabel('number of parties')
     axs.legend().set_title(None)
     fig.subplots_adjust(**ADJUST_KEYS)
-    fig.savefig(figure_path)
+    fig.savefig(figure_path, dpi=600)
 
 
 def draw_images(df: pd.DataFrame):
