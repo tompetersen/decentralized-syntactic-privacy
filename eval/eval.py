@@ -216,7 +216,65 @@ def parse_runs():
     return runs
 
 
+def create_raw_dataframe(runs):
+    df = pd.DataFrame(runs)
 
+    MIB_BYTES_FACTOR = 2 ** 20
+
+    df["time"] = df["required_time"]
+    df["bytes"] = df["lo_bytes_sent"]
+    df["time_party"] = df["required_time"] / df["num_boxes"]
+    df["motion_times"] = df["motion_circuit_eval"] + df["motion_preprocessing"]
+    df["mib_bytes"] = df["bytes"] / MIB_BYTES_FACTOR
+    df["bytes_party"] = df["bytes"] / df["num_boxes"]
+    df["mib_bytes_party"] = df["mib_bytes"] / df["num_boxes"]
+    df["motion_mib_bytes"] = df["motion_messages_size"] * df["num_boxes"]
+    df["motion_bytes"] = df["motion_mib_bytes"] * MIB_BYTES_FACTOR
+
+    df = df.sort_values(by=["dataset", "num_boxes", "protocol"])
+
+    return df
+
+
+def create_aggregated_dataframe(df):
+    result = df\
+        .groupby(["dataset", "protocol", "num_boxes"], as_index=False, sort=False)\
+        .agg(time_mean=("time", "mean"),
+             time_std=("time", "std"),
+             bytes_mean=("bytes", "mean"),
+             bytes_std=("bytes", "std"),
+             mib_bytes_mean=("mib_bytes", "mean"),
+             mib_bytes_std=("mib_bytes", "std"),
+             )
+    return result
+
+
+def create_figure(ours_data: pd.DataFrame, original_data: pd.DataFrame, mean_field: str, std_field: str, ylabel: str, figure_path: str):
+    ADJUST_KEYS = {
+        "left": 0.12,
+        "bottom": 0.1,
+        "right": 1,
+        "top": 0.95
+    }
+
+    fig, axs = plt.subplots()
+    x = np.arange(len(ours_data))
+    width = 0.3
+    bar = axs.errorbar(x=ours_data["num_boxes"],
+                       y=ours_data[mean_field],
+                       yerr=ours_data[std_field],
+                       label=OUR_PROTOCOL_TITLE,
+                       fmt=".-")
+    bar = axs.errorbar(x=original_data["num_boxes"],
+                       y=original_data[mean_field],
+                       yerr=original_data[std_field],
+                       label=ORIGINAL_PROTOCOL_TITLE,
+                       fmt=".-")
+    axs.set_ylabel(ylabel)
+    axs.set_xlabel('number of parties')
+    axs.legend().set_title(None)
+    fig.subplots_adjust(**ADJUST_KEYS)
+    fig.savefig(figure_path)
 
 
 def draw_images(df: pd.DataFrame):
@@ -232,172 +290,35 @@ def draw_images(df: pd.DataFrame):
 
     sns.set_theme("paper")
 
-    PER_PARTY_LABEL_TIME = "Our protocol - per party"
-    PER_PARTY_LABEL_COMMUNICATION = "Our protocol - per party"
-
-    ADJUST_KEYS = {
-        "left": 0.12,
-        "bottom": 0.1,
-        "right": 1,
-        "top": 0.95
-    }
-
     # FIGURE 1 
     # ADULT
     # line_chart
     # SECURESUM, MOTION
     # num_boxes -> time
-
-    fig, axs = plt.subplots()
-
-    x = np.arange(len(adult_ours_data))
-    width = 0.3
-    bar = axs.errorbar(x=adult_ours_data["num_boxes"],
-                       y=adult_ours_data["time_mean"],
-                       yerr=adult_ours_data["time_std"],
-                       label=OUR_PROTOCOL_TITLE,
-                       fmt=".-")
-    bar = axs.errorbar(x=adult_original_data["num_boxes"],
-                       y=adult_original_data["time_mean"],
-                       yerr=adult_original_data["time_std"],
-                       label=ORIGINAL_PROTOCOL_TITLE,
-                       fmt=".-")
-
-    # x = np.arange(len(adult_ours_data))
-    # width = 0.3
-    # bar = axs.bar(x + 0.17, adult_ours_data["time_mean"], width, yerr=adult_ours_data["time_std"], label=OUR_PROTOCOL_TITLE)
-    # bar = axs.bar(x - 0.17, adult_original_data["time_mean"], width, yerr=adult_original_data["time_std"], label=ORIGINAL_PROTOCOL_TITLE)
-
-    # a = sns.lineplot(data=adult_data, x="num_boxes", y="time_mean", hue="protocol", ax=axs)
-    # pprint(a)
-    # plot = axs.errorbar(x=adult_motion_data["num_boxes"], y=adult_motion_data["time_mean"], yerr=adult_motion_data["time_std"], fmt=",")
-
-    # adult_motion_data.plot(x="num_boxes", y="motion_times", colormap="Accent", linestyle='dashed', ax=axs)
-    # adult_motion_data.plot(x="num_boxes", y="time_party", colormap="Accent", linestyle='dashed', ax=axs, label=PER_PARTY_LABEL_TIME)
-    # axs.set_title('ADULT dataset - runtime')
-    axs.set_ylabel('time [s]')
-    axs.set_xlabel('number of parties')
-    axs.legend().set_title(None)
-    fig.subplots_adjust(**ADJUST_KEYS)
-    fig.savefig("img/adult_time.png")
+    create_figure(adult_ours_data, adult_original_data, "time_mean", "time_std", "time [s]", "img/adult_time.png")
 
     # FIGURE 2
     # MEDICAL
     # line_chart
     # SECURESUM, MOTION
     # num_boxes -> time
-
-    fig, axs = plt.subplots()
-    bar = axs.errorbar(x=medical_ours_data["num_boxes"],
-                       y=medical_ours_data["time_mean"],
-                       yerr=medical_ours_data["time_std"],
-                       label=OUR_PROTOCOL_TITLE,
-                       fmt=".-")
-    bar = axs.errorbar(x=medical_original_data["num_boxes"],
-                       y=medical_original_data["time_mean"],
-                       yerr=medical_original_data["time_std"],
-                       label=ORIGINAL_PROTOCOL_TITLE,
-                       fmt=".-")
-    # medical_motion_data.plot(x="num_boxes", y="motion_times", colormap="Accent", linestyle='dashed', ax=axs)
-    # medical_motion_data.plot(x="num_boxes", y="time_party", colormap="Accent", linestyle='dashed', ax=axs, label=PER_PARTY_LABEL_TIME)
-    # axs.set_title('medical dataset - runtime')
-    axs.set_ylabel('time [s]')
-    axs.set_xlabel('number of parties')
-    axs.legend().set_title(None)
-    fig.subplots_adjust(**ADJUST_KEYS)
-    fig.savefig("img/medical_time.png")
+    create_figure(medical_ours_data, medical_original_data, "time_mean", "time_std", "time [s]", "img/medical_time.png")
 
     # FIGURE 3
     # MEDICAL
     # line_chart
     # SECURESUM, MOTION
     # num_boxes -> bytes
-
-    fig, axs = plt.subplots()
-    bar = axs.errorbar(x=medical_ours_data["num_boxes"],
-                       y=medical_ours_data["bytes_mean"],
-                       yerr=medical_ours_data["bytes_std"],
-                       label=OUR_PROTOCOL_TITLE,
-                       fmt=".-")
-    bar = axs.errorbar(x=medical_original_data["num_boxes"],
-                       y=medical_original_data["bytes_mean"],
-                       yerr=medical_original_data["bytes_std"],
-                       label=ORIGINAL_PROTOCOL_TITLE,
-                       fmt=".-")
-    # medical_motion_data.plot(x="num_boxes", y="motion_bytes", colormap="Accent", linestyle='dashed', ax=axs)
-    # medical_motion_data.plot(x="num_boxes", y="bytes_party", colormap="Accent", linestyle='dashed', ax=axs, label=PER_PARTY_LABEL_COMMUNICATION)
-    # axs.set_title('medical dataset - communication demands')
-    axs.set_ylabel('sent data [byte]')
-    axs.set_xlabel('number of parties')
-    axs.legend().set_title(None)
-    fig.subplots_adjust(**ADJUST_KEYS)
-    fig.savefig("img/medical_bytes.png")
-
-    fig, axs = plt.subplots()
-    bar = axs.errorbar(x=adult_ours_data["num_boxes"],
-                       y=adult_ours_data["mib_bytes_mean"],
-                       yerr=adult_ours_data["mib_bytes_std"],
-                       label=OUR_PROTOCOL_TITLE,
-                       fmt=".-")
-    bar = axs.errorbar(x=adult_original_data["num_boxes"],
-                       y=adult_original_data["mib_bytes_mean"],
-                       yerr=adult_original_data["mib_bytes_std"],
-                       label=ORIGINAL_PROTOCOL_TITLE,
-                       fmt=".-")
-    # medical_motion_data.plot(x="num_boxes", y="motion_mib_bytes", colormap="Accent", linestyle='dashed', ax=axs)
-    # medical_motion_data.plot(x="num_boxes", y="mib_bytes_party", colormap="Accent", linestyle='dashed', ax=axs, label=PER_PARTY_LABEL_COMMUNICATION)
-    # axs.set_title('medical dataset - communication demands')
-    axs.set_ylabel('sent data [MiB]')
-    axs.set_xlabel('number of parties')
-    axs.legend().set_title(None)
-    fig.subplots_adjust(**ADJUST_KEYS)
-    fig.savefig("img/medical_mib_bytes.png")
+    create_figure(medical_ours_data, medical_original_data, "bytes_mean", "bytes_std", "sent data [byte]", "img/medical_bytes.png")
+    create_figure(medical_ours_data, medical_original_data, "mib_bytes_mean", "mib_bytes_std", "sent data [MiB]", "img/medical_mib_bytes.png")
 
     # FIGURE 4
     # ADULT
     # line_chart
     # SECURESUM, MOTION
     # num_boxes -> bytes
-
-    fig, axs = plt.subplots()
-    bar = axs.errorbar(x=adult_ours_data["num_boxes"],
-                       y=adult_ours_data["bytes_mean"],
-                       yerr=adult_ours_data["bytes_std"],
-                       label=OUR_PROTOCOL_TITLE,
-                       fmt=".-")
-    bar = axs.errorbar(x=adult_original_data["num_boxes"],
-                       y=adult_original_data["bytes_mean"],
-                       yerr=adult_original_data["bytes_std"],
-                       label=ORIGINAL_PROTOCOL_TITLE,
-                       fmt=".-")
-    # adult_motion_data.plot(x="num_boxes", y="motion_bytes", colormap="Accent", linestyle='dashed', ax=axs)
-    # adult_motion_data.plot(x="num_boxes", y="bytes_party", colormap="Accent", linestyle='dashed', ax=axs, label=PER_PARTY_LABEL_COMMUNICATION)
-    # axs.set_title('ADULT dataset - communication demands')
-    axs.set_ylabel('sent data [byte]')
-    axs.set_xlabel('number of parties')
-    axs.legend().set_title(None)
-    fig.subplots_adjust(**ADJUST_KEYS)
-    fig.savefig("img/adult_bytes.png")
-
-    fig, axs = plt.subplots()
-    bar = axs.errorbar(x=adult_ours_data["num_boxes"],
-                       y=adult_ours_data["mib_bytes_mean"],
-                       yerr=adult_ours_data["mib_bytes_std"],
-                       label=OUR_PROTOCOL_TITLE,
-                       fmt=".-")
-    bar = axs.errorbar(x=adult_original_data["num_boxes"],
-                       y=adult_original_data["mib_bytes_mean"],
-                       yerr=adult_original_data["mib_bytes_std"],
-                       label=ORIGINAL_PROTOCOL_TITLE,
-                       fmt=".-")
-    # adult_motion_data.plot(x="num_boxes", y="motion_mib_bytes", colormap="Accent", linestyle='dashed', ax=axs)
-    # adult_motion_data.plot(x="num_boxes", y="mib_bytes_party", colormap="Accent", linestyle='dashed', ax=axs, label=PER_PARTY_LABEL_COMMUNICATION)
-    # axs.set_title('ADULT dataset - communication demands')
-    axs.set_ylabel('sent data [MiB]')
-    axs.set_xlabel('number of parties')
-    axs.legend().set_title(None)
-    fig.subplots_adjust(**ADJUST_KEYS)
-    fig.savefig("img/adult_mib_bytes.png")
+    create_figure(adult_ours_data, adult_original_data, "bytes_mean", "bytes_std", "sent data [byte]", "img/adult_bytes.png")
+    create_figure(adult_ours_data, adult_original_data, "mib_bytes_mean", "mib_bytes_std", "sent data [MiB]", "img/adult_mib_bytes.png")
 
 
 def render_latex_table(df):
@@ -437,50 +358,18 @@ def render_latex_table(df):
         print(latex_row)
 
 
-def create_raw_dataframe(runs):
-    df = pd.DataFrame(runs)
-
-    MIB_BYTES_FACTOR = 2 ** 20
-
-    df["time"] = df["required_time"]
-    df["bytes"] = df["lo_bytes_sent"]
-    df["time_party"] = df["required_time"] / df["num_boxes"]
-    df["motion_times"] = df["motion_circuit_eval"] + df["motion_preprocessing"]
-    df["mib_bytes"] = df["bytes"] / MIB_BYTES_FACTOR
-    df["bytes_party"] = df["bytes"] / df["num_boxes"]
-    df["mib_bytes_party"] = df["mib_bytes"] / df["num_boxes"]
-    df["motion_mib_bytes"] = df["motion_messages_size"] * df["num_boxes"]
-    df["motion_bytes"] = df["motion_mib_bytes"] * MIB_BYTES_FACTOR
-
-    df = df.sort_values(by=["dataset", "num_boxes", "protocol"])
-
-    return df
-
-
-def create_aggregated_dataframe(df):
-    result = df\
-        .groupby(["dataset", "protocol", "num_boxes"], as_index=False, sort=False)\
-        .agg(time_mean=("time", "mean"),
-             time_std=("time", "std"),
-             bytes_mean=("bytes", "mean"),
-             bytes_std=("bytes", "std"),
-             mib_bytes_mean=("mib_bytes", "mean"),
-             mib_bytes_std=("mib_bytes", "std"),
-             )
-    return result
-
-
 def main():
     runs = parse_runs()
     # pprint(runs)
 
     df = create_raw_dataframe(runs)
-    print(df.to_string())
+    #print(df.to_string())
+
     df_agg = create_aggregated_dataframe(df)
     print(df_agg.to_string())
-    render_latex_table(df_agg)
-    draw_images(df_agg)
 
+    draw_images(df_agg)
+    render_latex_table(df_agg)
 
 
 if __name__ == "__main__":
