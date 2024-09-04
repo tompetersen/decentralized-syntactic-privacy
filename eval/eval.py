@@ -325,11 +325,13 @@ def render_latex_table(df):
     # create and print LaTeX table rows like the following
     # medical & 2 & & 0.6 s & 75.1 s & & 0.8 MB & 80.9 MB\\
 
-    def byte_repr(inbytes):
-        if inbytes > 10 ** 9:
-            result = "{:.2f} GB".format(inbytes / (10 ** 9))
+    def byte_repr(mean, std):
+        if mean > 10 ** 9:
+            result = "{:.2f} GB".format(mean / (10 ** 9))
+            # result = "{:.2f} GB \(\pm\) {:.2f}".format(mean / (10 ** 9), std / (10 ** 9))
         else:
-            result = "{:.0f} MB".format(inbytes / (10 ** 6))
+            result = "{:.0f} MB".format(mean / (10 ** 6))
+            # result = "{:.0f} MB \(\pm\) {:.0f}".format(mean / (10 ** 6), std / (10 ** 6))
         return result
 
     # we combine two adjacent rows to tranform them into one table row (original vs. our protocol)
@@ -348,12 +350,10 @@ def render_latex_table(df):
             dataset = ""
 
         num_boxes = our_row.num_boxes
-        time_our = "{:.1f} s".format(our_row.time_mean)
-        time_mohammed = "{:.1f} s".format(mohammed_row.time_mean)
-        bytes_our = our_row.bytes_mean
-        bytes_mohammed = mohammed_row.bytes_mean
-        byte_repr_our = byte_repr(bytes_our)
-        byte_repr_mohammed = byte_repr(bytes_mohammed)
+        time_our = "{:.1f} s \(\pm\) {:.1f}".format(our_row.time_mean, our_row.time_std)
+        time_mohammed = "{:.1f} s \(\pm\) {:.1f}".format(mohammed_row.time_mean, mohammed_row.time_std)
+        byte_repr_our = byte_repr(our_row.bytes_mean, our_row.bytes_std)
+        byte_repr_mohammed = byte_repr(mohammed_row.bytes_mean, mohammed_row.bytes_std)
         latex_row = f"{dataset} & {num_boxes} & & {time_mohammed} & {time_our} & & {byte_repr_mohammed} & {byte_repr_our} \\\\"
         print(latex_row)
 
