@@ -1,0 +1,854 @@
+NETWORK BEFORE: {'lo': snetio(bytes_sent=15272337453, bytes_recv=15272337453, packets_sent=25243259, packets_recv=25243259, errin=0, errout=0, dropin=0, dropout=0), 'eno1': snetio(bytes_sent=164291057, bytes_recv=508377163, packets_sent=622642, packets_recv=1027112, errin=0, errout=0, dropin=94602, dropout=0), 'eno2': snetio(bytes_sent=0, bytes_recv=0, packets_sent=0, packets_recv=0, errin=0, errout=0, dropin=0, dropout=0)}
+Starting central server [Number of boxes: 8, dataset: medical, k: 5]
+Starting central server [Number of boxes: 8, dataset: medical, k: 5, num_qids: 2]
+Used QIDs: 1,2
+Central initial round: ['1.1:119|2.1:2|', '1.1:76|2.1:2|', '1.77:119|2.1:2|', '1.1:119|2.1|', '1.1:119|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.1:119|2.1:2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.1:76|2.1:2|': (<NodeCounterType.Undefined: 1>, 0), '1.77:119|2.1:2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.1:119|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.1:119|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 3)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup             31.363 ms      0.000 ms      0.000 ms
+MT Setup               352.432 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     349.526 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1708.971 ms      0.000 ms      0.000 ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    3315.071 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.243 MiB in 7869 messages
+Received: 1.243 MiB in 7869 messages
+===========================================================================
+
+Finished run. Results: [ 2232][ 1127 1105][ 1083 1149]
+Next best refinement: (1, '1:119')
+Central regular round: ['1.1:65|2.1:2|', '1.66:76|2.1:2|', '1.1:76|2.1|', '1.1:76|2.2|', '1.77:82|2.1:2|', '1.83:119|2.1:2|', '1.77:119|2.1|', '1.77:119|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.1:65|2.1:2|': (<NodeCounterType.Undefined: 1>, 0), '1.66:76|2.1:2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.1:76|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.1:76|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.77:82|2.1:2|': (<NodeCounterType.Undefined: 1>, 0), '1.83:119|2.1:2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.77:119|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.77:119|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup             60.427 ms      0.000 ms -nan       ms
+MT Setup               119.875 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     666.174 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2052.139 ms      0.000 ms      0.000 ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    3500.057 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 553 574][ 667 460][ 541 564][ 416 689]
+Next best refinement: (2, '1:2')
+Central regular round: ['1.1:65|2.1|', '1.66:76|2.1|', '1.1:65|2.2|', '1.66:76|2.2|', '1.77:82|2.1|', '1.83:119|2.1|', '1.77:82|2.2|', '1.83:119|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.1:65|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.66:76|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.1:65|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.66:76|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.77:82|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.83:119|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.77:82|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.83:119|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup            320.027 ms      0.000 ms      0.000 ms
+MT Setup               177.852 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     165.582 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1739.700 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4076.763 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 344 323][ 209 251][ 241 175][ 300 389]
+Next best refinement: (1, '1:76')
+Central regular round: ['1.1:57|2.1|', '1.58:65|2.1|', '1.66:72|2.1|', '1.73:76|2.1|', '1.1:57|2.2|', '1.58:65|2.2|', '1.66:72|2.2|', '1.73:76|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.1:57|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.58:65|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.66:72|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.73:76|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.1:57|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.58:65|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.66:72|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.73:76|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup             56.264 ms      0.000 ms -nan       ms
+MT Setup               234.722 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     281.832 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2071.745 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4194.905 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 184 160][ 184 139][ 110 99][ 118 133]
+Next best refinement: (1, '77:119')
+Central regular round: ['1.77:79|2.1|', '1.80:82|2.1|', '1.83:87|2.1|', '1.88:119|2.1|', '1.77:79|2.2|', '1.80:82|2.2|', '1.83:87|2.2|', '1.88:119|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.77:79|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.80:82|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.83:87|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.88:119|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.77:79|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.80:82|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.83:87|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.88:119|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup             15.299 ms      0.000 ms -nan       ms
+MT Setup               327.024 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     637.065 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2273.986 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    3665.720 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 126 115][ 106 69][ 148 152][ 182 207]
+Next best refinement: (1, '83:119')
+Central regular round: ['1.83:84|2.1|', '1.85:87|2.1|', '1.88:91|2.1|', '1.92:99|2.1|', '1.100:119|2.1|', '1.83:84|2.2|', '1.85:87|2.2|', '1.88:91|2.2|', '1.92:99|2.2|', '1.100:119|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.83:84|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.85:87|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.88:91|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.92:99|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.100:119|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.83:84|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.85:87|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.88:91|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.92:99|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.100:119|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0, 0], [0, 0], [0, 0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              0.940 ms      0.000 ms      0.000 ms
+MT Setup               108.441 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     440.056 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2074.804 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4446.287 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 2.459 MiB in 15352 messages
+Received: 2.459 MiB in 15352 messages
+===========================================================================
+
+Finished run. Results: [ 53 53][ 1073741823 39 30][ 87 95][ 0 0 0]
+Next best refinement: (1, '66:76')
+Central regular round: ['1.66:69|2.1|', '1.70:72|2.1|', '1.73:74|2.1|', '1.75:76|2.1|', '1.66:69|2.2|', '1.70:72|2.2|', '1.73:74|2.2|', '1.75:76|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.66:69|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.70:72|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.73:74|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.75:76|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.66:69|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.70:72|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.73:74|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.75:76|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              7.254 ms      0.000 ms      0.000 ms
+MT Setup                85.283 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     491.526 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1911.948 ms      0.000 ms      0.000 ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4155.138 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 109 75][ 64 75][ 64 54][ 59 74]
+Next best refinement: (1, '1:65')
+Central regular round: ['1.1:30|2.1|', '1.31:50|2.1|', '1.51:57|2.1|', '1.58:61|2.1|', '1.62:65|2.1|', '1.1:30|2.2|', '1.31:50|2.2|', '1.51:57|2.2|', '1.58:61|2.2|', '1.62:65|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.1:30|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.31:50|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.51:57|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.58:61|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.62:65|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.1:30|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.31:50|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.51:57|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.58:61|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.62:65|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0, 0], [0, 0], [0, 0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              0.986 ms      0.000 ms -nan       ms
+MT Setup               324.140 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     675.860 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2286.747 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4673.014 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 2.459 MiB in 15352 messages
+Received: 2.459 MiB in 15352 messages
+===========================================================================
+
+Finished run. Results: [ 6 63 115][ 75 85][ 5 47 58][ 40 59]
+Next best refinement: (1, '77:82')
+Central regular round: ['1.77|2.1|', '1.78|2.1|', '1.79|2.1|', '1.80|2.1|', '1.81|2.1|', '1.82|2.1|', '1.77|2.2|', '1.78|2.2|', '1.79|2.2|', '1.80|2.2|', '1.81|2.2|', '1.82|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.77|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.78|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.79|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.80|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.81|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.82|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.77|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.78|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.79|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.80|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.81|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.82|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              0.835 ms      0.000 ms      0.000 ms
+MT Setup               187.640 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     291.676 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1861.233 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4903.884 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 2.946 MiB in 18346 messages
+Received: 2.946 MiB in 18346 messages
+===========================================================================
+
+Finished run. Results: [ 52 40 34][ 51 33 31][ 50 47 51][ 44 45 63]
+Next best refinement: (1, '66:72')
+Central regular round: ['1.66:67|2.1|', '1.68:69|2.1|', '1.70|2.1|', '1.71|2.1|', '1.72|2.1|', '1.66:67|2.2|', '1.68:69|2.2|', '1.70|2.2|', '1.71|2.2|', '1.72|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.66:67|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.68:69|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.70|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.71|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.72|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.66:67|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.68:69|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.70|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.71|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.72|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0, 0], [0, 0], [0, 0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              0.479 ms      0.000 ms -nan       ms
+MT Setup               106.878 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     499.596 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2056.236 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4716.400 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 2.459 MiB in 15352 messages
+Received: 2.459 MiB in 15352 messages
+===========================================================================
+
+Finished run. Results: [ 54 55][ 28 20 27][ 27 37][ 29 9 16]
+Next best refinement: (1, '1:57')
+Central regular round: ['1.1:25|2.1|', '1.26:30|2.1|', '1.31:40|2.1|', '1.41:50|2.1|', '1.51:54|2.1|', '1.55:57|2.1|', '1.1:25|2.2|', '1.26:30|2.2|', '1.31:40|2.2|', '1.41:50|2.2|', '1.51:54|2.2|', '1.55:57|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.1:25|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.26:30|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.31:40|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.41:50|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.51:54|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.55:57|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.1:25|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.26:30|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.31:40|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.41:50|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.51:54|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.55:57|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 6)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              0.863 ms      0.000 ms -nan       ms
+MT Setup               361.681 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     360.372 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1957.860 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4595.840 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 2.946 MiB in 18342 messages
+Received: 2.946 MiB in 18342 messages
+===========================================================================
+
+Finished run. Results: [ 0 0][ 12 51][ 53 62][ 0 0][ 7 40][ 37 21]
+Next best refinement: (1, '83:87')
+Central regular round: ['1.83|2.1|', '1.84|2.1|', '1.85|2.1|', '1.86|2.1|', '1.87|2.1|', '1.83|2.2|', '1.84|2.2|', '1.85|2.2|', '1.86|2.2|', '1.87|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.83|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.84|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.85|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.86|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.87|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.83|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.84|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.85|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.86|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.87|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0, 0], [0, 0], [0, 0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              0.628 ms      0.000 ms      0.000 ms
+MT Setup               368.276 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     455.281 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2232.542 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4413.410 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 2.459 MiB in 15352 messages
+Received: 2.459 MiB in 15352 messages
+===========================================================================
+
+Finished run. Results: [ 26 27][ 26 20 7][ 44 43][ 32 30 33]
+Next best refinement: (1, '77:79')
+Central regular round: []
+Next best refinement: (1, '73:76')
+Central regular round: ['1.73|2.1|', '1.74|2.1|', '1.75|2.1|', '1.76|2.1|', '1.73|2.2|', '1.74|2.2|', '1.75|2.2|', '1.76|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.73|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.74|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.75|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.76|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.73|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.74|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.75|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.76|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup             10.970 ms      0.000 ms -nan       ms
+MT Setup               402.010 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     371.643 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2211.581 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    3968.515 ms      0.000 ms -nan       ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 30 34][ 41 34][ 23 36][ 38 36]
+Next best refinement: (1, '80:82')
+Central regular round: []
+Next best refinement: (1, '58:65')
+Central regular round: ['1.58:59|2.1|', '1.60:61|2.1|', '1.58:59|2.2|', '1.60:61|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.58:59|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.60:61|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.58:59|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.60:61|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 2)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              5.216 ms      0.000 ms -nan       ms
+MT Setup               161.772 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     259.098 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1448.323 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    2520.119 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.000 MiB in 6374 messages
+Received: 1.000 MiB in 6374 messages
+===========================================================================
+
+Finished run. Results: [ 37 38][ 22 18]
+Next best refinement: (1, '51:57')
+Central regular round: ['1.51:52|2.1|', '1.53:54|2.1|', '1.55|2.1|', '1.56|2.1|', '1.57|2.1|', '1.51:52|2.2|', '1.53:54|2.2|', '1.55|2.2|', '1.56|2.2|', '1.57|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.51:52|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.53:54|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.55|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.56|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.57|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.51:52|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.53:54|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.55|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.56|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.57|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0, 0], [0, 0], [0, 0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              0.829 ms      0.000 ms -nan       ms
+MT Setup                89.802 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     793.037 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   2068.458 ms      0.000 ms      0.000 ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4631.509 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 2.459 MiB in 15352 messages
+Received: 2.459 MiB in 15352 messages
+===========================================================================
+
+Finished run. Results: [ 27 26][ 15 22 25][ 19 18][ 6 10 5]
+Next best refinement: (1, '66:69')
+Central regular round: ['1.66|2.1|', '1.67|2.1|', '1.68|2.1|', '1.69|2.1|', '1.66|2.2|', '1.67|2.2|', '1.68|2.2|', '1.69|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.66|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.67|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.68|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.69|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.66|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.67|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.68|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.69|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup             12.683 ms      0.000 ms      0.000 ms
+MT Setup               103.318 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     242.427 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1766.831 ms      0.000 ms      0.000 ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    3979.745 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 28 26][ 30 25][ 14 13][ 24 13]
+Next best refinement: (1, '85:87')
+Central regular round: []
+Next best refinement: (1, '75:76')
+Central regular round: []
+Next best refinement: (1, '83:84')
+Central regular round: []
+Next best refinement: (1, '70:72')
+Central regular round: []
+Next best refinement: (1, '73:74')
+Central regular round: []
+Next best refinement: (1, '58:61')
+Central regular round: ['1.58|2.1|', '1.59|2.1|', '1.60|2.1|', '1.61|2.1|', '1.58|2.2|', '1.59|2.2|', '1.60|2.2|', '1.61|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.58|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.59|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.60|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.61|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.58|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.59|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.60|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.61|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              8.282 ms      0.000 ms -nan       ms
+MT Setup               233.039 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     240.063 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1905.689 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    4232.200 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 20 17][ 23 15][ 10 12][ 8 10]
+Next best refinement: (1, '31:50')
+Central regular round: ['1.31:35|2.1|', '1.36:40|2.1|', '1.41:46|2.1|', '1.47:50|2.1|', '1.31:35|2.2|', '1.36:40|2.2|', '1.41:46|2.2|', '1.47:50|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.31:35|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.36:40|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.41:46|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.47:50|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.31:35|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.36:40|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.41:46|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.47:50|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup             10.921 ms      0.000 ms      0.000 ms
+MT Setup               276.766 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     193.328 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1815.075 ms      0.000 ms      0.000 ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    3835.102 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 0 0][ 19 32][ 0 0][ 12 28]
+Next best refinement: (1, '68:69')
+Central regular round: []
+Next best refinement: (1, '55:57')
+Central regular round: []
+Next best refinement: (1, '41:50')
+Central regular round: ['1.41:44|2.1|', '1.45:46|2.1|', '1.41:44|2.2|', '1.45:46|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.41:44|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.45:46|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.41:44|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.45:46|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 2)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              4.658 ms      0.000 ms      0.000 ms
+MT Setup               169.536 ms      0.000 ms -nan       ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     111.505 ms      0.000 ms      0.000 ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1522.949 ms      0.000 ms -nan       ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    2851.644 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.000 MiB in 6374 messages
+Received: 1.000 MiB in 6374 messages
+===========================================================================
+
+Finished run. Results: [ 9 10][ 0 0]
+Next best refinement: (1, '51:54')
+Central regular round: ['1.51|2.1|', '1.52|2.1|', '1.53|2.1|', '1.54|2.1|', '1.51|2.2|', '1.52|2.2|', '1.53|2.2|', '1.54|2.2|']
+MOTION: perform_protocol_secure_sums_gt_k
+	COUNTERS: [{'1.51|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.52|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.53|2.1|': (<NodeCounterType.Undefined: 1>, 0), '1.54|2.1|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.51|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.52|2.2|': (<NodeCounterType.Undefined: 1>, 0)}, {'1.53|2.2|': (<NodeCounterType.Undefined: 1>, 0), '1.54|2.2|': (<NodeCounterType.Undefined: 1>, 0)}]
+	CLEAN INPUTS: [[0, 0], [0, 0], [0, 0], [0, 0]]
+Starting eval...
+Before inputValues init (parties: 9, groups: 4)...
+Running eval...
+===========================================================================
+Statistics
+===========================================================================
+MOTION version: 5e0b8ee-dirty @ panda-new
+invocation: python ../ours/run_central.py --number_of_boxes 8 --dataset medical
+by petersen@ccblade4, PID 525902
+===========================================================================
+Run time statistics over 1 iterations
+---------------------------------------------------------------------------
+                          mean        median        stddev
+---------------------------------------------------------------------------
+MT Presetup              8.551 ms      0.000 ms -nan       ms
+MT Setup               169.537 ms      0.000 ms      0.000 ms
+SP Presetup              0.000 ms      0.000 ms      0.000 ms
+SP Setup                 0.000 ms      0.000 ms      0.000 ms
+SB Presetup              0.000 ms      0.000 ms      0.000 ms
+SB Setup                 0.000 ms      0.000 ms      0.000 ms
+Base OTs                 0.000 ms      0.000 ms      0.000 ms
+OT Extension Setup     333.589 ms      0.000 ms -nan       ms
+KK13 OT Extension Setup      0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Preprocessing Total   1850.537 ms      0.000 ms      0.000 ms
+Gates Setup              0.000 ms      0.000 ms      0.000 ms
+Gates Online             0.000 ms      0.000 ms      0.000 ms
+---------------------------------------------------------------------------
+Circuit Evaluation    3972.465 ms      0.000 ms      0.000 ms
+===========================================================================
+Communication with each other party:
+Sent: 1.972 MiB in 12358 messages
+Received: 1.972 MiB in 12358 messages
+===========================================================================
+
+Finished run. Results: [ 13 14][ 12 14][ 10 9][ 10 8]
+Next best refinement: (1, '66:67')
+Central regular round: []
+Next best refinement: (1, '58:59')
+Central regular round: []
+Next best refinement: (1, '60:61')
+Central regular round: []
+Next best refinement: (1, '51:52')
+Central regular round: []
+Next best refinement: (1, '53:54')
+Central regular round: []
+Next best refinement: None
+FINISHED - time elapsed [0:02:31.199326]
+NETWORK AFTER: {'lo': snetio(bytes_sent=18454477883, bytes_recv=18454477883, packets_sent=26625599, packets_recv=26625599, errin=0, errout=0, dropin=0, dropout=0), 'eno1': snetio(bytes_sent=170251613, bytes_recv=516052127, packets_sent=641137, packets_recv=1045599, errin=0, errout=0, dropin=94678, dropout=0), 'eno2': snetio(bytes_sent=0, bytes_recv=0, packets_sent=0, packets_recv=0, errin=0, errout=0, dropin=0, dropout=0)}

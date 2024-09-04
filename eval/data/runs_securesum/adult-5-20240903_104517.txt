@@ -1,0 +1,12 @@
+NETWORK BEFORE: {'lo': snetio(bytes_sent=1009758267, bytes_recv=1009758267, packets_sent=6502631, packets_recv=6502631, errin=0, errout=0, dropin=0, dropout=0), 'eno1': snetio(bytes_sent=108112971, bytes_recv=432185530, packets_sent=435173, packets_recv=834352, errin=0, errout=0, dropin=93572, dropout=0), 'eno2': snetio(bytes_sent=0, bytes_recv=0, packets_sent=0, packets_recv=0, errin=0, errout=0, dropin=0, dropout=0)}
+Starting central server [Number of boxes: 5, dataset: adult, k: 5, num_qids: 6]
+Used QIDs: 0,4,5,6,8,9
+Next best refinement: (0, '0:100')
+Next best refinement: (4, '0:16')
+Next best refinement: (5, 'ANY')
+Next best refinement: (8, 'ANY')
+Next best refinement: (9, 'ANY')
+Next best refinement: (4, '9:16')
+Next best refinement: None
+FINISHED - time elapsed [0:00:13.574984]
+NETWORK AFTER: {'lo': snetio(bytes_sent=1048512822, bytes_recv=1048512822, packets_sent=6771534, packets_recv=6771534, errin=0, errout=0, dropin=0, dropout=0), 'eno1': snetio(bytes_sent=108325349, bytes_recv=432426591, packets_sent=435944, packets_recv=835130, errin=0, errout=0, dropin=93579, dropout=0), 'eno2': snetio(bytes_sent=0, bytes_recv=0, packets_sent=0, packets_recv=0, errin=0, errout=0, dropin=0, dropout=0)}
