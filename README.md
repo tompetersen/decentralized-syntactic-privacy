@@ -22,3 +22,7 @@ $ python3 -m venv venv
 $ . venv/bin/activate
 $ pip install -r ours/requirements.txt
 
+# create environment variable for lib path
+
+$ export MOTION_PANDA_LIB_PATH=/path/to/motion/build/lib/
+
